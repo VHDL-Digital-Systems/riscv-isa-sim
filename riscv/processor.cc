@@ -783,6 +783,9 @@ void processor_t::set_mmu_capability(int cap)
       set_impl(IMPL_MMU_SV32, true);
       set_impl(IMPL_MMU, true);
       break;
+    case IMPL_MMU_SV57:
+      set_impl(IMPL_MMU_SV57, true);
+      // Fall through
     case IMPL_MMU_SV48:
       set_impl(IMPL_MMU_SV48, true);
       // Fall through
@@ -794,6 +797,7 @@ void processor_t::set_mmu_capability(int cap)
       set_impl(IMPL_MMU_SV32, false);
       set_impl(IMPL_MMU_SV39, false);
       set_impl(IMPL_MMU_SV48, false);
+      set_impl(IMPL_MMU_SV57, false);
       set_impl(IMPL_MMU, false);
       break;
   }
